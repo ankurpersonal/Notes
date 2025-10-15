@@ -1,6 +1,8 @@
-# 🔁 Python Looping Cheat Sheet
+# 🐍 Python Cheat Sheet: Loops, Strings, Roman Numerals, and More
 
-# -------------------------------
+# ================================
+# 🔁 Looping Patterns
+
 # 1. Simple for loop
 for item in iterable:
     print(item)
@@ -10,7 +12,7 @@ for index, item in enumerate(iterable):
     print(index, item)
 
 # 3. For loop over range
-for i in range(n):  # 0 to n-1
+for i in range(n):
     print(i)
 
 # 4. For loop with custom range
@@ -20,9 +22,6 @@ for i in range(start, stop, step):
 # 5. While loop
 while condition:
     print("Looping...")
-
-# -------------------------------
-# 🔁 Nested Loops
 
 # 6. Nested for loop
 for i in range(3):
@@ -38,7 +37,7 @@ while i < 3:
         j += 1
     i += 1
 
-# -------------------------------
+# ================================
 # 🔁 Looping Over Data Structures
 
 # 8. Loop over list
@@ -60,7 +59,7 @@ for item in my_set:
 for char in "hello":
     print(char)
 
-# -------------------------------
+# ================================
 # 🔁 Loop Control Statements
 
 # 12. break
@@ -82,13 +81,13 @@ for i in range(5):
 else:
     print("Completed without break")
 
-# -------------------------------
-# 🔁 Advanced Patterns
+# ================================
+# 🔁 Advanced Loop Patterns
 
 # 15. List comprehension
 squares = [x*x for x in range(5)]
 
-# 16. Loop with zip (parallel iteration)
+# 16. Loop with zip
 names = ['Alice', 'Bob']
 scores = [85, 90]
 for name, score in zip(names, scores):
@@ -102,9 +101,127 @@ for item in reversed(my_list):
 for item in sorted(my_list):
     print(item)
 
-# -------------------------------
-# 🧠 Pro Tips
-# - Prefer for over while when possible — it's cleaner and safer.
-# - Use enumerate() for index access.
-# - Use zip() for parallel iteration.
-# - Use comprehensions for concise transformations.
+# ================================
+# 🔁 String Traversal
+
+text = "Python is fun"
+
+# 1. Character by character
+for char in text:
+    print(char)
+
+# 2. Using index
+for i in range(len(text)):
+    print(text[i])
+
+# 3. Using enumerate
+for i, char in enumerate(text):
+    print(i, char)
+
+# 4. Reverse traversal
+for char in reversed(text):
+    print(char)
+
+# 5. Reverse with slicing
+for char in text[::-1]:
+    print(char)
+
+# 6. Skip certain characters
+for char in text:
+    if char == 'o':
+        continue
+    print(char)
+
+# 7. Break on condition
+for char in text:
+    if char == 'n':
+        break
+    print(char)
+
+# 8. Manual index jump
+i = 0
+while i < len(text):
+    print(text[i])
+    if text[i] == 'y':
+        i += 2
+    else:
+        i += 1
+
+# 9. Adjacent characters
+for i in range(len(text) - 1):
+    print(text[i], text[i + 1])
+
+# 10. Sliding window
+for i in range(len(text) - 2):
+    print(text[i:i+3])
+
+# 11. Find vowels
+vowels = "aeiou"
+for char in text:
+    if char in vowels:
+        print("Vowel:", char)
+
+# 12. List comprehension
+uppercase = [char.upper() for char in text]
+
+# 13. zip for parallel strings
+s1 = "abc"
+s2 = "123"
+for c1, c2 in zip(s1, s2):
+    print(c1, c2)
+
+# 14. map
+result = list(map(str.upper, text))
+
+# ================================
+# 🧵 Last Word of a Sentence
+
+sentence = "Python is powerful and fun!"
+
+# 1. Basic split
+last_word = sentence.split()[-1]
+
+# 2. Strip punctuation
+import string
+cleaned = sentence.strip(string.punctuation)
+last_word = cleaned.split()[-1]
+
+# 3. rsplit
+last_word = sentence.rsplit(' ', 1)[-1]
+
+# 4. Regex
+import re
+words = re.findall(r'\b\w+\b', sentence)
+last_word = words[-1]
+
+# ================================
+# 🔢 Roman to Integer
+
+def romanToInt(s: str) -> int:
+    roman = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000}
+    total = 0
+    prev = 0
+    for char in reversed(s):
+        value = roman[char]
+        if value < prev:
+            total -= value
+        else:
+            total += value
+        prev = value
+    return total
+
+# ================================
+# 🔢 Integer to Roman
+
+def intToRoman(num: int) -> str:
+    val_map = [
+        (1000, "M"), (900, "CM"), (500, "D"), (400, "CD"),
+        (100, "C"), (90, "XC"), (50, "L"), (40, "XL"),
+        (10, "X"), (9, "IX"), (5, "V"), (4, "IV"), (1, "I")
+    ]
+    result = []
+    for value, symbol in val_map:
+        count = num // value
+        result.append(symbol * count)
+        num %= value
+    return ''.join(result)
