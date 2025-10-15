@@ -194,6 +194,85 @@ import re
 words = re.findall(r'\b\w+\b', sentence)
 last_word = words[-1]
 
+
+# 🐍 Python Cheat Sheet: Slice Alternatives and String Manipulation
+
+# ============================================
+# 🔁 Slice Alternatives by Scenario
+
+# 1. Accessing a substring or sublist
+text = "abcdef"
+# ✅ Using slice
+sub = text[2:5]  # 'cde'
+# 🚫 Alternative
+sub = ''.join([text[i] for i in range(2, 5)])
+
+# 2. Reversing a string or list
+# ✅ Using slice
+reversed_text = text[::-1]
+# 🚫 Alternative
+reversed_text = ''.join(reversed(text))
+# For lists:
+my_list = [1, 2, 3]
+reversed_list = list(reversed(my_list))
+
+# 3. Copying a list or string
+# ✅ Using slice
+copy = my_list[:]
+# 🚫 Alternative
+copy = list(my_list)
+copy = my_list.copy()
+
+# 4. Getting first N elements
+n = 3
+# ✅ Using slice
+first_n = my_list[:n]
+# 🚫 Alternative
+first_n = [my_list[i] for i in range(n)]
+
+# 5. Getting last N elements
+# ✅ Using slice
+last_n = my_list[-n:]
+# 🚫 Alternative
+last_n = [my_list[i] for i in range(len(my_list) - n, len(my_list))]
+
+# 6. Skipping elements (step slicing)
+# ✅ Using slice
+skipped = my_list[::2]
+# 🚫 Alternative
+skipped = [my_list[i] for i in range(0, len(my_list), 2)]
+
+# 7. Removing first or last character from string
+# ✅ Using slice
+trimmed = text[1:-1]
+# 🚫 Alternative
+trimmed = ''.join([text[i] for i in range(1, len(text) - 1)])
+
+# 8. Splitting and extracting last word
+sentence = "Python is powerful and fun!"
+# ✅ Using split and slice
+last_word = sentence.split()[-1]
+# 🚫 Alternative
+words = []
+word = ''
+for char in sentence:
+    if char == ' ':
+        if word:
+            words.append(word)
+            word = ''
+    else:
+        word += char
+if word:
+    words.append(word)
+last_word = words[-1]
+
+# ============================================
+# 🧠 Pro Tips
+# - Use range(start, stop, step) for manual control.
+# - Use reversed(), copy(), and join() as clean alternatives.
+# - Avoid slicing in performance-critical or restricted environments by using loops and comprehensions.
+
+
 # ================================
 # 🔢 Roman to Integer
 
