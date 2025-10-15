@@ -273,6 +273,133 @@ last_word = words[-1]
 # - Avoid slicing in performance-critical or restricted environments by using loops and comprehensions.
 
 
+
+# 🐍 Python Cheat Sheet: Alternatives to Commonly Restricted Features
+
+# ============================================
+# 🚫 1. Slice Operator [:]
+
+text = "abcdef"
+# ✅ Slice
+sub = text[2:5]
+
+# 🚫 Alternative
+sub = ''.join([text[i] for i in range(2, 5)])
+
+# ============================================
+# 🚫 2. List Comprehension
+
+nums = [1, 2, 3, 4]
+# ✅ List comprehension
+squares = [x*x for x in nums]
+
+# 🚫 Alternative
+squares = []
+for x in nums:
+    squares.append(x*x)
+
+# ============================================
+# 🚫 3. Lambda Functions
+
+# ✅ Lambda
+add = lambda x, y: x + y
+
+# 🚫 Alternative
+def add(x, y):
+    return x + y
+
+# ============================================
+# 🚫 4. map(), filter(), reduce()
+
+nums = [1, 2, 3, 4]
+
+# ✅ map
+squares = list(map(lambda x: x*x, nums))
+
+# 🚫 Alternative
+squares = []
+for x in nums:
+    squares.append(x*x)
+
+# ✅ filter
+evens = list(filter(lambda x: x % 2 == 0, nums))
+
+# 🚫 Alternative
+evens = []
+for x in nums:
+    if x % 2 == 0:
+        evens.append(x)
+
+# ✅ reduce
+from functools import reduce
+total = reduce(lambda x, y: x + y, nums)
+
+# 🚫 Alternative
+total = 0
+for x in nums:
+    total += x
+
+# ============================================
+# 🚫 5. collections.Counter
+
+from collections import Counter
+# ✅ Counter
+freq = Counter("banana")
+
+# 🚫 Alternative
+freq = {}
+for char in "banana":
+    freq[char] = freq.get(char, 0) + 1
+
+# ============================================
+# 🚫 6. collections.defaultdict
+
+from collections import defaultdict
+# ✅ defaultdict
+d = defaultdict(list)
+d['a'].append(1)
+
+# 🚫 Alternative
+d = {}
+key = 'a'
+if key not in d:
+    d[key] = []
+d[key].append(1)
+
+# ============================================
+# 🚫 7. eval()
+
+expr = "2 + 3"
+# ✅ eval
+result = eval(expr)
+
+# 🚫 Alternative (only for safe expressions)
+result = int(expr.split()[0]) + int(expr.split()[2])  # Only works for simple cases
+
+# ============================================
+# 🚫 8. import-heavy solutions
+
+# ✅ Using external libraries like numpy, pandas, etc.
+# 🚫 Alternative: Stick to built-in types and manual logic
+
+# Example: sum of list
+nums = [1, 2, 3]
+# ✅ Using sum()
+total = sum(nums)
+
+# 🚫 Alternative
+total = 0
+for num in nums:
+    total += num
+
+# ============================================
+# 🧠 Pro Tips
+# - Use explicit loops and conditionals when shortcuts are discouraged.
+# - Avoid obscure or hard-to-explain constructs in interviews.
+# - Stick to core Python syntax and built-in types unless told otherwise.
+
+
+
 # ================================
 # 🔢 Roman to Integer
 
