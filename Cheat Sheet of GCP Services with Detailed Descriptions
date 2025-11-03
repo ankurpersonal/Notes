@@ -1,0 +1,195 @@
+
+Cloud Composer:
+Purpose: Managed workflow orchestration service.
+Key Features:
+- Task scheduling: Automates workflow execution.
+- Dependency management: Ensures tasks run in the correct order.
+- Error handling: Automatically retries and handles errors.
+Example Use Case: Automating and managing recurring ETL jobs with robust error handling, ensuring data is consistently processed and available.
+
+BigQuery:
+Purpose: Fully managed, serverless data warehouse.
+Key Features:
+- Real-time analytics: Handles large-scale data analysis quickly.
+- Automatic scaling: Adjusts resources based on demand.
+- Built-in machine learning: Supports AI and ML models directly in SQL.
+Example Use Case: Large-scale data analysis and interactive querying for business intelligence, enabling real-time decision-making.
+
+Dataflow:
+Purpose: Stream and batch data processing service.
+Key Features:
+- Unified programming model: Processes both stream and batch data.
+- Scalability: Automatically scales resources to handle data volume.
+- Integration: Works seamlessly with BigQuery, Cloud Storage, and other GCP services.
+Example Use Case: ETL pipelines and real-time data processing for transforming incoming data streams into structured formats for analysis.
+
+Dataproc:
+Purpose: Managed Hadoop and Spark service.
+Key Features:
+- Easy deployment: Quickly deploys Hadoop/Spark clusters.
+- Integration: Connects with other GCP services for streamlined workflows.
+- Cost-effective: Offers pay-per-use pricing and quick start-up times.
+Example Use Case: Running big data processing tasks using Hadoop ecosystem tools like Spark and Hive for batch data analysis.
+
+Cloud Data Fusion:
+Purpose: Fully managed data integration service.
+Key Features:
+- Visual interface: Simplifies ETL process design with a drag-and-drop interface.
+- Pre-built connectors: Easily integrates with various data sources.
+- Real-time integration: Supports streaming data for up-to-date analytics.
+Example Use Case: Designing and running ETL and ELT pipelines for data preparation and transformation, ensuring data consistency across sources.
+
+Cloud Data Loss Prevention (DLP) API:
+Purpose: Data protection through de-identification, masking, and redaction.
+Key Features:
+- Sensitive data discovery: Identifies PII and other sensitive data types.
+- Data masking: Obfuscates sensitive data to protect privacy.
+- Integration: Works with various GCP services for seamless data protection.
+Example Use Case: Redacting sensitive information in data streams before storage or processing, ensuring compliance with data privacy regulations.
+
+IAM (Identity and Access Management):
+Purpose: Control access to resources.
+Key Features:
+- Fine-grained access control: Grants precise permissions to users and services.
+- Role-based permissions: Simplifies permission management with predefined roles.
+- Audit logging: Tracks access and changes for compliance.
+Example Use Case: Granting and managing user access to different GCP services based on roles and responsibilities, ensuring secure resource access.
+
+Cloud Storage:
+Purpose: Object storage service.
+Key Features:
+- Scalability: Handles vast amounts of data with ease.
+- Security: Offers encryption and fine-grained access controls.
+- Lifecycle management: Automates data retention and deletion policies.
+Example Use Case: Storing and serving static website content and backups for disaster recovery, ensuring data is secure and easily accessible.
+
+Cloud SQL:
+Purpose: Managed relational database service.
+Key Features:
+- Automated backups: Ensures data safety and availability.
+- Replication: Provides high availability and disaster recovery.
+- Patch management: Keeps databases secure and up-to-date.
+Example Use Case: Hosting relational databases for web applications with high availability and reliability, reducing administrative overhead.
+
+Bigtable:
+Purpose: Fully managed NoSQL database.
+Key Features:
+- Low latency: Provides fast read/write operations.
+- Scalability: Handles large volumes of data with ease.
+- Real-time analytics: Supports high-speed data access for analytical queries.
+Example Use Case: Handling large-scale time-series data and user analytics for IoT applications, ensuring real-time data availability.
+
+Spanner:
+Purpose: Globally distributed, strongly consistent database.
+Key Features:
+- Horizontal scaling: Seamlessly scales across regions.
+- Multi-region replication: Ensures high availability and low latency.
+- ACID transactions: Supports complex transactional workloads.
+Example Use Case: Global transactional applications like financial ledgers and supply chain management, providing consistency and reliability.
+Get DataWithSantosh’s stories in your inbox
+
+Join Medium for free to get updates from this writer.
+
+Firestore:
+Purpose: Flexible, scalable NoSQL cloud database.
+Key Features:
+- Real-time synchronization: Keeps data updated across clients in real-time.
+- Offline support: Ensures data availability even when offline.
+- Hierarchical data structures: Organizes data in a flexible, scalable format.
+Example Use Case: Real-time collaboration applications like chat apps and document editing, providing seamless data sync and offline access.
+
+Pub/Sub:
+Purpose: Messaging service for building event-driven systems.
+Key Features:
+- Asynchronous messaging: Decouples producers and consumers.
+- Scalability: Handles high message throughput.
+- Reliable message delivery: Ensures messages are delivered and processed.
+Example Use Case: Event logging and notification systems for microservices architectures, enabling real-time data flow and processing.
+
+Dataplex:
+Purpose: Data mesh for distributed data management.
+Key Features:
+- Unified data management: Manages data across silos.
+- Governance: Ensures data compliance and quality.
+- Data discovery: Simplifies data discovery and cataloging.
+Example Use Case: Managing and governing distributed data assets across multiple teams, ensuring data is accessible and compliant.
+
+Data Catalog:
+Purpose: Metadata management service.
+Key Features:
+- Data discovery: Easily finds and catalogs data assets.
+- Metadata tagging: Organizes data with tags for easier search.
+- Governance: Supports data governance and compliance efforts.
+Example Use Case: Cataloging data assets to enable easier discovery and governance for data analysts, improving data utilization and compliance.
+
+BigQuery Reservations:
+Purpose: Manage BigQuery compute capacity.
+Key Features:
+- Capacity allocation: Reserves slots for predictable performance.
+- Cost control: Manages costs with flat-rate pricing.
+- Predictable performance: Ensures consistent query performance.
+Example Use Case: Reserving compute slots for consistent performance of business-critical queries, optimizing cost and performance.
+
+Database Migration Service:
+Purpose: Simplified database migration to GCP.
+Key Features:
+- Automated migration: Simplifies database transfers.
+- Minimal downtime: Ensures continuous data availability.
+- Continuous replication: Keeps data synchronized during migration.
+Example Use Case: Migrating on-premises MySQL databases to Cloud SQL with minimal disruption, ensuring smooth transitions and data integrity.
+
+Transfer Appliance:
+Purpose: High-capacity storage device for data transfer to GCP.
+Key Features:
+- Secure: Ensures data security during transport.
+- High-speed data transfer: Reduces transfer time for large datasets.
+- Physical transport: Bypasses network transfer limitations.
+Example Use Case: Transferring large datasets from on-premises storage to Google Cloud Storage, enabling quick and secure data migration.
+
+Datastream:
+Purpose: Real-time data replication and synchronization service.
+Key Features:
+- Continuous data replication: Keeps data up-to-date.
+- Minimal latency: Ensures near real-time data synchronization.
+- Integration: Works with various GCP data services.
+Example Use Case: Synchronizing data between on-premises databases and GCP for real-time analytics, providing consistent and up-to-date data access.
+
+Cloud Monitoring:
+Purpose: Observability and monitoring service for cloud resources.
+Key Features:
+- Custom dashboards: Visualizes metrics and performance.
+- Alerts: Notifies about performance issues.
+- Integrated logging: Correlates logs and metrics for better insights.
+Example Use Case: Monitoring latency and error rates of data processing jobs and setting up alerts for anomalies, ensuring system reliability.
+
+Cloud Logging:
+Purpose: Logging service for collecting and analyzing logs from GCP services.
+Key Features:
+- Log aggregation: Collects logs from various sources.
+- Search and analysis: Provides tools for log analysis.
+- Integration: Works with other GCP services for comprehensive monitoring.
+Example Use Case: Troubleshooting Dataflow job failures by analyzing error logs, improving system reliability and performance.
+
+Cloud Networking:
+Purpose: Networking services for secure and efficient cloud communication.
+Key Features:
+- VPC: Creates isolated networks for resources.
+- VPN: Secures connections between on-premises and cloud.
+- Global load balancing: Distributes traffic across regions.
+Example Use Case: Establishing secure, high-performance connections between on-premises infrastructure and GCP, ensuring reliable and secure data transfer.
+
+Workflows:
+Purpose: Managed service for orchestrating workflows.
+Key Features:
+- Visual editor: Simplifies workflow design.
+- API integration: Connects various GCP services.
+- Error handling: Manages workflow failures and retries.
+Example Use Case: Automating multi-step data processing workflows across different GCP services, improving process efficiency and reliability.
+
+Cloud Scheduler:
+Purpose: Managed cron job service for scheduling tasks.
+Key Features:
+- Time-based scheduling: Automates task execution based on schedules.
+- HTTP target: Triggers HTTP endpoints.
+- Pub/Sub integration: Publishes messages to Pub/Sub topics.
+Example Use Case: Scheduling periodic data processing jobs or triggering backups at regular intervals, ensuring timely task execution.
